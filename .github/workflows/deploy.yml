@@ -1,0 +1,48 @@
+# Publishes the site to GitHub Pages on every push to main.
+# Before publishing, every local CSS/JS link in the HTML pages gets a
+# ?v=<commit> suffix, so visitors' browsers download the new files
+# instead of reusing an old cached copy.
+#
+# One-time setup on GitHub: Settings > Pages > Build and deployment >
+# Source: "GitHub Actions".
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stamp CSS/JS links with the commit version
+        run: |
+          VERSION="${GITHUB_SHA::7}"
+          find . -name '*.html' -not -path './.git/*' -print0 | xargs -0 sed -i -E \
+            "s#((href|src)=\"assets/[^\"?]+\.(css|js))(\?v=[^\"]*)?\"#\1?v=${VERSION}\"#g"
+          grep -ho 'assets/[^"]*?v=[^"]*' *.html | sort -u
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
