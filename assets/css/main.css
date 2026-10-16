@@ -1927,6 +1927,16 @@ input, select, textarea {
 				border: 0;
 			}
 
+		#header h2 {
+			text-transform: uppercase;
+			font-weight: 400;
+			color: #888;
+			margin: 1.25em 0 0 0;
+			font-size: 1.1em;
+			line-height: 1.6em;
+			letter-spacing: 4px;
+		}
+
 		#header p {
 			text-transform: uppercase;
 			font-weight: 400;
@@ -2625,6 +2635,11 @@ input, select, textarea {
 				letter-spacing: 2px;
 			}
 
+			#header h2 {
+				font-size: 0.9em;
+				letter-spacing: 2px;
+			}
+
 		/* Banner */
 
 			#banner {
@@ -2703,3 +2718,246 @@ input, select, textarea {
 				}
 
 	}
+
+/* Theme Toggle */
+
+	#theme-toggle {
+		position: fixed;
+		top: 1em;
+		right: 1em;
+		z-index: 10003;
+		width: 2.75em;
+		height: 2.75em;
+		padding: 0;
+		border-radius: 50%;
+		background: #878787;
+		color: #fff !important;
+		font-size: 1em;
+		letter-spacing: 0;
+		line-height: 2.75em;
+		cursor: pointer;
+	}
+
+		#theme-toggle:before {
+			padding: 0;
+			opacity: 1;
+			top: 0;
+		}
+
+		#theme-toggle:hover {
+			background: #ed786a;
+		}
+
+		#theme-toggle:focus-visible {
+			outline: solid 2px #ed786a;
+			outline-offset: 2px;
+		}
+
+	@media screen and (max-width: 736px) {
+
+		#theme-toggle {
+			top: 5px;
+			right: 5px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 16px;
+		}
+
+	}
+
+/* Dark Mode */
+
+	html[data-theme="dark"] {
+		color-scheme: dark;
+	}
+
+	html[data-theme="dark"] body {
+		background: #161616;
+	}
+
+	html[data-theme="dark"] body,
+	html[data-theme="dark"] input,
+	html[data-theme="dark"] textarea,
+	html[data-theme="dark"] select {
+		color: #b0b0b0;
+	}
+
+	html[data-theme="dark"] h1,
+	html[data-theme="dark"] h2,
+	html[data-theme="dark"] h3,
+	html[data-theme="dark"] h4,
+	html[data-theme="dark"] h5,
+	html[data-theme="dark"] h6,
+	html[data-theme="dark"] #header h2,
+	html[data-theme="dark"] #header p {
+		color: #a8a8a8;
+	}
+
+	html[data-theme="dark"] #header h1 {
+		color: #ed786a;
+		text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.4);
+	}
+
+	html[data-theme="dark"] a,
+	html[data-theme="dark"] strong,
+	html[data-theme="dark"] b {
+		color: #d0d0d0;
+	}
+
+	html[data-theme="dark"] a {
+		border-bottom-color: #444;
+	}
+
+	html[data-theme="dark"] h1 a,
+	html[data-theme="dark"] h2 a,
+	html[data-theme="dark"] h3 a,
+	html[data-theme="dark"] h4 a,
+	html[data-theme="dark"] h5 a,
+	html[data-theme="dark"] h6 a {
+		color: inherit;
+	}
+
+		html[data-theme="dark"] a:hover,
+		html[data-theme="dark"] a:hover strong {
+			color: #ed786a;
+		}
+
+	html[data-theme="dark"] hr,
+	html[data-theme="dark"] blockquote {
+		border-color: #333;
+	}
+
+	html[data-theme="dark"] #header,
+	html[data-theme="dark"] #features,
+	html[data-theme="dark"] #main {
+		background: #1e1e1e;
+	}
+
+		html[data-theme="dark"] #header > .container {
+			border-bottom-color: #333;
+			box-shadow: inset 0px -8px 0px 0px #1e1e1e, inset 0px -10px 0px 0px #333;
+		}
+
+	html[data-theme="dark"] #nav > ul > li > a {
+		color: #b0b0b0;
+	}
+
+		html[data-theme="dark"] #nav > ul > li > a:before {
+			background: #3a3a3a;
+			color: #ccc;
+		}
+
+		html[data-theme="dark"] #nav > ul > li.active > a:before,
+		html[data-theme="dark"] #nav > ul > li:hover > a:before {
+			background: #ed786a;
+			color: #fff;
+		}
+
+		html[data-theme="dark"] #nav > ul > li.active > a > span,
+		html[data-theme="dark"] #nav > ul > li:hover > a > span {
+			color: #ed786a;
+		}
+
+	html[data-theme="dark"] .dropotron {
+		background: rgba(37, 37, 37, 0.975);
+		border-color: #333;
+	}
+
+		html[data-theme="dark"] .dropotron.level-0:after {
+			border-bottom-color: #252525;
+		}
+
+		html[data-theme="dark"] .dropotron.level-0:before {
+			border-bottom-color: #333;
+		}
+
+		html[data-theme="dark"] .dropotron span,
+		html[data-theme="dark"] .dropotron a {
+			border-top-color: #333;
+		}
+
+	html[data-theme="dark"] #banner {
+		border-color: #333;
+		box-shadow: inset 0px -8px 0px 0px #1e1e1e, inset 0px 8px 0px 0px #1e1e1e;
+	}
+
+	html[data-theme="dark"] #content > section,
+	html[data-theme="dark"] #content > article,
+	html[data-theme="dark"] #sidebar > section,
+	html[data-theme="dark"] #sidebar > article {
+		border-top-color: #333;
+		box-shadow: inset 0px 8px 0px 0px #1e1e1e, inset 0px 10px 0px 0px #333;
+	}
+
+		html[data-theme="dark"] #content > section:first-child,
+		html[data-theme="dark"] #content > article:first-child,
+		html[data-theme="dark"] #sidebar > section:first-child,
+		html[data-theme="dark"] #sidebar > article:first-child {
+			box-shadow: none;
+		}
+
+	html[data-theme="dark"] #footer {
+		background: #161616;
+		border-top-color: #333;
+	}
+
+	html[data-theme="dark"] #copyright,
+	html[data-theme="dark"] ul.divided li,
+	html[data-theme="dark"] table tbody tr,
+	html[data-theme="dark"] table tfoot {
+		border-color: #333;
+	}
+
+	html[data-theme="dark"] ul.links li {
+		border-left-color: #444;
+	}
+
+	html[data-theme="dark"] table tfoot {
+		background: #252525;
+	}
+
+	html[data-theme="dark"] .image {
+		border-color: #2c2c2c !important;
+	}
+
+	html[data-theme="dark"] .box.excerpt .date,
+	html[data-theme="dark"] table thead {
+		background: #3a3a3a;
+	}
+
+	html[data-theme="dark"] form input[type="text"],
+	html[data-theme="dark"] form input[type="email"],
+	html[data-theme="dark"] form input[type="password"],
+	html[data-theme="dark"] form select,
+	html[data-theme="dark"] form textarea,
+	html[data-theme="dark"] #footer form input[type="text"],
+	html[data-theme="dark"] #footer form input[type="email"],
+	html[data-theme="dark"] #footer form input[type="password"],
+	html[data-theme="dark"] #footer form select,
+	html[data-theme="dark"] #footer form textarea {
+		background: #2a2a2a;
+	}
+
+		html[data-theme="dark"] form input:focus,
+		html[data-theme="dark"] form select:focus,
+		html[data-theme="dark"] form textarea:focus {
+			background: #333 !important;
+		}
+
+	html[data-theme="dark"] form ::placeholder {
+		color: #888 !important;
+	}
+
+	html[data-theme="dark"] #titleBar .toggle:before {
+		background: rgba(50, 50, 50, 0.9);
+		color: #ccc;
+	}
+
+	html[data-theme="dark"] #theme-toggle {
+		background: #3a3a3a;
+	}
+
+		html[data-theme="dark"] #theme-toggle:hover {
+			background: #ed786a;
+		}
